@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { Product } from "./product.model";
-import { StaticDataSource } from "./static.datasource";
+import { Injectable } from '@angular/core';
+import { Product } from './product.model';
+import { StaticDataSource } from './static.datasource';
 
 @Injectable()
 export class ProductRepository {
@@ -11,7 +11,7 @@ export class ProductRepository {
         dataSource.getProducts().subscribe(data => {
             this.products = data;
             this.categories = data.map(p => p.category).filter((item, index, array) => array.indexOf(item) === index).sort() as string[];
-        })
+        });
     }
 
     getProducts(category: string | null = null): Product[] {
