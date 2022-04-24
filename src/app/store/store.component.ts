@@ -4,18 +4,18 @@ import { ProductRepository } from '@app/model/product.repository';
 
 @Component({
     selector: 'store',
-    moduleId: module.id,
+    // moduleId: module.id,
     templateUrl: 'store.component.html'
 })
 
 export class StoreComponent {
     constructor(private repository: ProductRepository) {}
 
-    getProduct(): Product[] {
+    get products(): Product[] {
         return this.repository.getProducts();
     }
 
-    getCategories(): string[] {
+    get categories(): string[] {
         return this.repository.getCategories();
     }
 }
